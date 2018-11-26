@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tipsy :: Services :: Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+
+    <div class="row">
+        <div class="col-md-12"><h3>Users API</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/users/createTipper</div>
+        <div class="col-md-8">
+            <form action="/v1/users/createTipper" method="post">
+                <input type="text" name="emailAddress" value="hendrik.tredoux@gmail.com"/>
+                <input type="text" name="firstName" value="Hendrik"/>
+                <input type="text" name="lastName" value="Tredoux"/>
+                <button type="submit">Create User</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/users/getUser</div>
+        <div class="col-md-8">
+            <form action="/v1/users/getUser">
+                <input type="text" name="emailAddress" value="hendrik.tredoux@gmail.com"/>
+                <button type="submit">Get User</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12"><h3>Funding API</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/funding/createTip</div>
+        <div class="col-md-8">
+            <form action="/v1/funding/createTip?tip=10" method="post"><button type="submit">Create Tip</button></form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12"><h3>Escrow API</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/escrow/balance</div>
+        <div class="col-md-8">
+            <form action="/v1/escrow/balance"><button type="submit">View Balance</button></form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
