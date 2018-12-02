@@ -37,6 +37,16 @@
             </form>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4">/v1/users/activate</div>
+        <div class="col-md-8">
+            <form action="/v1/users/activate">
+                <input type="text" name="userId" placeholder="userId"/>
+                <input type="text" name="code" placeholder="Activation Code"/>
+                <button type="submit">Activate user</button>
+            </form>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12"><h3>Funding API</h3></div>
@@ -55,6 +65,80 @@
         <div class="col-md-4">/v1/escrow/balance</div>
         <div class="col-md-8">
             <form action="/v1/escrow/balance"><button type="submit">View Balance</button></form>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12"><h3>Notification API</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/notifications/</div>
+        <div class="col-md-8">
+            <form action="/v1/notifications/">
+                <input type="text" name="userId" placeholder="Enter UserId here"/>
+                <button type="submit">View all notifications</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/notifications/web</div>
+        <div class="col-md-8">
+            <form action="/v1/notifications/web">
+                <input type="text" name="userId" placeholder="Enter UserId here"/>
+                <button type="submit">View all web notifications</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/notifications/email/send</div>
+        <div class="col-md-8">
+            <form action="/v1/notifications/email/send" method="post">
+                <input type="text" name="userId" placeholder="Enter UserId here"/>
+                <button type="submit">Send test email notifications</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/notifications/email</div>
+        <div class="col-md-8">
+            <form action="/v1/notifications/email">
+                <input type="text" name="userId" placeholder="Enter UserId here"/>
+                <button type="submit">View all email notifications</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/notifications/push/send</div>
+        <div class="col-md-8">
+            <form action="/v1/notifications/push/send" method="post">
+                <input type="text" name="userId" placeholder="Enter UserId here"/>
+                <input type="text" name="message" value="Test notification message"/>
+                <button type="submit">Send test push notifications</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/notifications/push</div>
+        <div class="col-md-8">
+            <form action="/v1/notifications/push">
+                <input type="text" name="userId" placeholder="Enter UserId here"/>
+                <button type="submit">View all push notifications</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12"><h3>System API</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">/v1/system/service/notification</div>
+        <div class="col-md-8">
+            <form action="/v1/system/service/notification" method="post">
+                <input type="text" name="enabled" value="false"/>
+                <button type="submit">Disable or enable service</button>
+            </form>
         </div>
     </div>
 

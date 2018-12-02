@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tipsy :: Services :: Error</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+</head>
+<body th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 text-white">
+            <h1 th:if="${httpStatus}" th:text="|${httpStatus} - ${httpStatus.reasonPhrase}|">404</h1>
+            <p th:if="${errorMessage}" th:utext="${errorMessage}">Error java.lang.NullPointerException</p>
+            <p th:if="${statusMessage}" th:utext="${statusMessage}">Error java.lang.NullPointerException</p>
+            <a href="dashboard" th:href="@{/dashboard}">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
