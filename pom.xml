@@ -13,4 +13,31 @@
         <module>services</module>
     </modules>
 
+	<build>
+		<pluginManagement>
+         <plugins>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-webapp-maven-plugin</artifactId>
+            <!-- check Maven Central for the latest version -->
+            <version>1.3.0</version>
+         </plugins>
+      </pluginManagement>
+      <plugins>
+         <plugin>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-webapp-maven-plugin</artifactId>
+            <configuration>
+
+                <!-- Web App information -->
+                <resourceGroup>your-resource-group</resourceGroup>
+                <appName>your-app-name</appName>
+
+                <!-- Java Runtime Stack for Web App on Linux-->
+                <linuxRuntime>tomcat 8.5-jre8</linuxRuntime>
+            </configuration>
+         </plugin>
+         ...
+      </plugins>
+	</build>
+
 </project>
